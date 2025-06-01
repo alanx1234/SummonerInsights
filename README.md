@@ -2,7 +2,7 @@
 ---
 **Author**: Alan Xia
 
-This is my final project for DSC80: Practice and Application of Data Science at UC San Diego, taken during the spring of 2025. It applies almost everything learned in the course, ranging from exploratory data analysis to predictive modeling and feature engineering.
+This is my final project for DSC80: Practice and Application of Data Science at UC San Diego, taken during Spring 2025. It applies almost everything learned in the course, ranging from exploratory data analysis to predictive modeling and feature engineering.
 
 # Introduction
 
