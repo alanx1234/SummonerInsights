@@ -62,8 +62,8 @@ Before proceeding with any further analysis, let's first take a look at some of 
 
 <iframe
   src="assets/kills.html"
-  width="1000"
-  height="400"
+  width="1100"
+  height="500"
   frameborder="0"
 ></iframe>
 
@@ -73,8 +73,8 @@ The kills histogram is right-skewed, showing that teams typically have between 5
 
 <iframe
   src="assets/cspm.html"
-  width="1000"
-  height="400"
+   width="1100"
+  height="500"
   frameborder="0"
 ></iframe>
 
@@ -87,9 +87,9 @@ The Creep Score per Minute (CSPM) histogram is symmetric, with a peak at around 
 Now that we have examined some individual distributions, we can now transfer our attention to analyzing the relationships between variables. In the univariate analysis step, we made observations of how CSPM and kills are individually distributed, and we can now extend that in this step. By plotting CSPM against kills and comparing damage output in wins versus losses, we can get a general idea of which variables are correlated. The insights gained here will be helpful in conducting hypothesis tests and our modeling process down the line.
 
 <iframe
-  src="assets/cspm_kills.html"
-  width="1000"
-  height="400"
+  src="assets/cspm_v_kills.html"
+   width="1100"
+   height="500"
   frameborder="0"
 ></iframe>
 
@@ -99,8 +99,8 @@ The scatterplot shows no consistent trends, with the points forming a cloud-like
 
 <iframe
   src="assets/damage.html"
-  width="800"
-  height="400"
+  width="1100"
+  height="500"
   frameborder="0"
 ></iframe>
 
@@ -157,8 +157,8 @@ We proceed to conduct the permutation test over 1,000 repetitions.
 
 <iframe
   src="assets/cspm_league.html"
-  width="1000"
-  height="400"
+   width="1100"
+  height="500"
   frameborder="0"
 ></iframe>
 
@@ -181,8 +181,8 @@ Similarly, we display the first few rows of the observed distribution of `result
 
 <iframe
   src="assets/cspm_kills.html"
-  width="1000"
-  height="400"
+   width="1100"
+  height="500"
   frameborder="0"
 ></iframe>
 
@@ -208,8 +208,8 @@ We can use the absolute difference in means as the test statistic based on the K
 
 <iframe
   src="assets/kde.html"
-  width="1000"
-  height="400"
+   width="1100"
+  height="500"
   frameborder="0"
 ></iframe>
 
@@ -219,8 +219,8 @@ We proceed to test these hypotheses via a permutation test over 1,000 trials, us
 
 <iframe
   src="assets/kills2.html"
-  width="1000"
-  height="400"
+   width="1100"
+  height="500"
   frameborder="0"
 ></iframe>
 
@@ -250,7 +250,7 @@ To begin, we'll use an 80/20 train-test split so that 20% of the matches in our 
 
 <iframe
   src="assets/baseline_cm.png"
-  width="500"
+  width="600"
   height="500"
   frameborder="0"
 ></iframe>
@@ -307,7 +307,7 @@ Next, we will build a final pipeline using these hyperparameters, fit it on the 
 
 <iframe
   src="assets/final_cm.png"
-  width="500"
+  width="600"
   height="500"
   frameborder="0"
 ></iframe>
@@ -372,8 +372,8 @@ If the resulting p-value is smaller than 0.05, we will reject the null and suppo
 
 <iframe
   src="assets/f1.html"
-  width="1000"
-  height="400"
+   width="1100"
+  height="500"
   frameborder="0"
 ></iframe>
 
