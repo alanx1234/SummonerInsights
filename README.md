@@ -263,7 +263,7 @@ With a baseline model that already exhibits relatively strong performance, it's 
 
 # Final Model
 
-In this section, we'll construct a final model that improves up on our baseline model that used two features. To do so, we will:
+In this section, we'll construct a final model that improves up on our baseline model that used two features. To do so, we will do the following:
 
 1. **Feature Engineering**: Engineer at least two new features from our variables of interest.
 2. **Hyperparameter Search**: Perform a hyperparameter search using `GridSearchCV` to find the best hyperparameters for `RandomForestClassifier`.
