@@ -1,3 +1,6 @@
+# Summoner Insights
+---
+
 # Introduction
 
 League of Legends (LoL) is one of the world's most watched esports, bringing in millions of viewers across the globe every year. In addition, it has also consistently remained as one of the most popular games ever since its initial release in 2009. Each match is a thrilling 5-on-5 battle on Summoner's Rift, where each team tries to destroy the opposing Nexus in order to win. At the start of every game, players draft from a pool of over 150 unique champions and counting. League of Legends is deeply rooted in strategy and teamwork. Even before the game begins, each team has to strategically balance their champion picks across 5 different roles (top lane, jungle, mid lane, bot lane, and support) to not only synergize with each other but also counter the enemy team. When the game starts, players must farm minions and monsters to earn gold, which they can spend on items that make their champion stronger. Gaining control over neutral objectives on the map, such as dragons, Baron Nashor, and Rift Herald, can drastically swing the momentum of the game in favor of one team. The game only ends when one side's Nexus falls, regardless of how long the game takes.
