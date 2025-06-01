@@ -34,7 +34,7 @@ By the end of this analysis, we'll be able to determine which in-game metrics ca
 
 # Data Cleaning and Exploratory Data Analysis
 
-### Data Cleaning
+### **Data Cleaning**
 To begin, we first filter the dataset to keep only the relevant columns. It is important to note that each game consists of 12 distinct observations — 2 for each team and 10 for each player. We want to model at the team level because it ensures that each row is an independent observation, rather than having the same `result` repeated five times. As a result, we should keep all rows where `position == 'team'` and discard all individual player rows. 
 
 The original dataset also includes `datacompleteness`, which signifies if an observation has incomplete records or not. Since we require full entries for EDA and modeling, we should keep all rows where `datacompleteness` is `complete` to keep only team summaries with no missing values. Finally, we drop the position column as it becomes redundant.
@@ -82,7 +82,7 @@ The kills histogram is right-skewed, showing that teams typically have between 5
 
 The Creep Score per Minute (CSPM) histogram is symmetric, with a peak at around 30-32 CS per minute. This implies that most matches in the professional scene feature a consistent rate of farming minions, and there are typically few extreme outliers. Because there is hardly any skew present, the mean and median the distribution are roughly the same. All of these features imply that CSPM is roughly normal, which means that using z-score for standardization is appropriate. Low CSPM might reflect games where teams played more aggressively rather than defensively, constantly engaging in team fights and skirmishes, while high CSPM suggests the opposite.
 
-### Bivariate Analysis
+### **Bivariate Analysis**
 
 Now that we have examined some individual distributions, we can now transfer our attention to analyzing the relationships between variables. In the univariate analysis step, we made observations of how CSPM and kills are individually distributed, and we can now extend that in this step. By plotting CSPM against kills and comparing damage output in wins versus losses, we can get a general idea of which variables are correlated. The insights gained here will be helpful in conducting hypothesis tests and our modeling process down the line.
 
@@ -108,7 +108,7 @@ The scatterplot shows no consistent trends, with the points forming a cloud-like
 
 The boxplot shows the trend that more damage is dealt in wins compared to losses. While the median damage is about 55,000 in losses, it reaches nearly 70,000 in wins. Interestingly, the upper whisker (about 225,000) for losses is slightly higher than the one for wins (about 200,000), showing that games with very high total damage output don't necessarily always translate to wins. It's important to note that in League of Legends, dealing a lot of damage to champions doesn't guarantee kills, as damage can be mitigated by shields or healing. Additionally, poor target selection, such as targeting champions that have higher health, can artificially inflate the total damage. Without properly securing kills, high damage itself won't always translate to wins.
 
-### Interesting Aggregates
+### **Interesting Aggregates**
 
 Here is a table showing the average damage output and kills in losses versus wins for each of the top five leagues by total games:
 
@@ -125,7 +125,7 @@ Across these top five leagues in the world, both average kills and average damag
 
 # Assessment of Missingness
 
-### NMAR Analysis
+### **NMAR Analysis**
 
 Before proceeding to draft our baseline predictive model, we turn our attention towards assessing missingness in our dataset. As none of the columns we are interested in are NMAR, we zoom back out to the scope of the entire raw dataset.
 
@@ -141,7 +141,7 @@ In particular, we can observe that the `ban1` column (and by extension, any of t
 
 If we wanted to convert this into a Missing at Random (MAR) scenario, we could add a new column called `num_bans` to explain the missingness of `ban1`. This new column denotes the number of bans allowed for a specific match, so the missingness of `ban1` would become MAR instead of NMAR because it would depend on `num_bans`. In contrast, without this column in our original raw dataset, the ban slots are clearly NMAR because their missingness depends on unobserved tournament rules.
 
-### Missingness Dependency
+### **Missingness Dependency**
 
 For the remainder of this missingness analysis, we'll continue to work with the unfiltered raw dataset so that all missing values are still present. However, we will narrow our focus to the columns we are interested in. First, we'll examine a column with non-trivial missingness to analyze, and then perform permutation tests to see if the missingness is dependent on other columns. We will analyze whether or not the missingness of `cspm` depends on other columns through hypothesis testing, using a significance level of  **0.05** to indicate statistical significance.
 
@@ -377,6 +377,6 @@ If the resulting p-value is smaller than 0.05, we will reject the null and suppo
   frameborder="0"
 ></iframe>
 
-**Conclusion**
+#### Conclusion
 
 With a resulting p-value of 0.054, we fail to reject the null hypothesis based on the significance level of 0.05. We see that although the observed absolute difference in F1 scores between LCK and LCS is roughly 0.045, a difference like this is somewhat reasonable under the assumption that both leagues have the same F1 score. This suggests that despite the different playstyles in the LCK and LCS, our model seems to perform fairly for both groups, at least for this chosen evaluation metric. Since our p-value was so close to the threshold, adding more permutations or having a slightly higher threshold could have indicated significance, which indicates that attempting to improve the F1 score between different leagues could be an area of improvement to focus on.
