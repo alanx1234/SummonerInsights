@@ -272,15 +272,15 @@ In this section, we'll construct a final model that improves up on our baseline 
 
 In addition our baseline features (`kills` and `firstbaron`), we will add a total of three new features.
 
-####  KDA (`kills`, `deaths`, and `assists`) 
+**KDA** (`kills`, `deaths`, and `assists`) 
 
 This is calculated as the sum of a player's kills and assists divided by their total deaths (by 1 if they had zero deaths). Although this is typically used for individual players, we can calculate this for the entire team's stats as well. The reason behind adding this feature is that it combines `kills`, `assists`, and `deaths` into a single metric, allowing us to capture both offensive contribution and survivability at once. Even though we already have `kills` as a feature, classifiers like `RandomForestClassifier` are typically not as sensitive to collinearity between features as opposed to a linear model.
 
-#### `cspm` (Creep Score per Minute)
+**CSPM**
 
 Because CSPM is an excellent indicator of a team's resource levels and overall strength in the later stages of the game, it serves as a great feature to add to our model. Naturally, a higher CSPM means that a team has more gold available to buy stronger items throughout the game. In a similar line of reasoning to K/DA, CSPM also effectively captures `monsterkills` and `minionkills` since these are directly calculated in CSPM.
 
-#### `dragons`
+**dragons**
 
 Like baron, the different types of dragons in the game offer immense powerups to a team when they secure them. As such, they can serve as powerful predictors of match outcome. We will interpret `dragons` as a numeric variable as opposed to a categorical ordinal variable due to how Random Forests can naturally recognize that teams with higher dragon counts tend to win, without needing to explicitly define categories.
 
