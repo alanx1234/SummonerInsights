@@ -340,7 +340,7 @@ The two least important features are `dragons` and `cspm`. It is intuitive for `
 
 #### Takeaways
 
-We can translate these findings directly to three main areas of focus for coaches and players:
+We can translate these findings directly to three main areas of focus for coaches and players, listed in descending order of importance:
 
 **Maximize Overall KDA**
 
