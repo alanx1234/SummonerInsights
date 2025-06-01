@@ -1,5 +1,4 @@
-# Summoner Insights
-## Introduction
+# Introduction
 
 League of Legends (LoL) is one of the world's most watched esports, bringing in millions of viewers across the globe every year. In addition, it has also consistently remained as one of the most popular games ever since its initial release in 2009. Each match is a thrilling 5-on-5 battle on Summoner's Rift, where each team tries to destroy the opposing Nexus in order to win. At the start of every game, players draft from a pool of over 150 unique champions and counting. League of Legends is deeply rooted in strategy and teamwork. Even before the game begins, each team has to strategically balance their champion picks across 5 different roles (top lane, jungle, mid lane, bot lane, and support) to not only synergize with each other but also counter the enemy team. When the game starts, players must farm minions and monsters to earn gold, which they can spend on items that make their champion stronger. Gaining control over neutral objectives on the map, such as dragons, Baron Nashor, and Rift Herald, can drastically swing the momentum of the game in favor of one team. The game only ends when one side's Nexus falls, regardless of how long the game takes.
 
@@ -33,7 +32,7 @@ To accomplish this, we will:
 
 By the end of this analysis, we'll be able to determine which in-game metrics carry the most weight when predicting match outcomes in the professional League of Legends scene.
 
-## Data Cleaning and Exploratory Data Analysis
+# Data Cleaning and Exploratory Data Analysis
 
 ### **Data Cleaning**
 To begin, we first filter the dataset to keep only the relevant columns. It is important to note that each game consists of 12 distinct observations — 2 for each team and 10 for each player. We want to model at the team level because it ensures that each row is an independent observation, rather than having the same `result` repeated five times. As a result, we should keep all rows where `position == 'team'` and discard all individual player rows. 
@@ -89,7 +88,7 @@ Now that we have examined some individual distributions, we can now transfer our
 
 <iframe
   src="assets/cspm_kills.html"
-  width="800"
+  width="1000"
   height="400"
   frameborder="0"
 ></iframe>
@@ -124,7 +123,7 @@ Here is a table showing the average damage output and kills in losses versus win
 
 Across these top five leagues in the world, both average kills and average damage are higher in wins compared to losses. While the difference in damage in losses and wins is more subtle, there is a drastic difference in the average amount of kills in losses and in wins. The magnitude of these differences also vary by region. For example, while PGC shows an 11.3 kill increase in wins compared to losses, LCKC only has an 8.9 kill difference. These differences could be attributed to the different playstyles and approaches to the game specific to each region. Regardless, the consistent pattern confirms that both damage to champions and kill count can serve as reliable indicators of winning regardless of what league we are analyzing.
 
-## Assessment of Missingness
+# Assessment of Missingness
 
 ### **NMAR Analysis**
 
@@ -195,7 +194,7 @@ In this section, we have shown that the chance `cspm` is missing differs by `lea
 
 With these preliminary steps being taken, we are free to start to move on to our main analysis.
 
-## Hypothesis Testing
+# Hypothesis Testing
 
 ### **Hypothesis Testing**
 
@@ -233,7 +232,7 @@ The p-value we obtained, 0.00, is far below the significance level threshold of 
 
 By previewing which statistics might have an impact on match outcome, the insights gained from this hypothesis test will be helpful for building our predictive model going forth.
 
-## Framing a Prediction Problem
+# Framing a Prediction Problem
 
 For the remainder of this project, we will pivot our focus towards building a predictive model. 
 
@@ -245,7 +244,7 @@ For evaluation metrics, we will use **accuracy** to calculate the percentage of 
 
 Because we are using full match summary stats, we can assume all of our features are available at the time of prediction. Essentially, we are building a classifier that uses metrics recorded at the end of games to explain why a team won or lost.
 
-## Baseline Model
+# Baseline Model
 
 For our baseline classifier, we will train a `RandomForestClassifier` and start with only two features: `kills` and `firstbaron`. We will examine the extent to which a simple model like this which uses one quantitative feature (`kills`) and one nominal feature (`firstbaron`) can be used to accurately predict `result`. Despite the simplicity of this model, overall kill count and securing the first baron are both essential to winning. If the performance of this model is already good, then we know that these two features alone can be effective in predicting match outcome. On the other hand, if we conclude that the performance is poor, then we'll know that adding more features is probably needed. Regardless of the initial performance, we'll be making many improvements in our final model.
 
@@ -264,7 +263,7 @@ Our baseline model was able to achieve an accuracy of 88.1% and an F1 score of 0
 
 With a baseline model that already exhibits relatively strong performance, it's time to upgrade it even further in the next section.
 
-## Final Model
+# Final Model
 
 In this section, we'll construct a final model that improves up on our baseline model that used two features. To do so, we will:
 
@@ -359,7 +358,7 @@ Because CSPM accounts has such a minor feature importance at the highest levels 
 
 It is important to note that these guidelines are not meant to be definitive, but rather should be taken as suggestions to experiment with. In League of Legends, innovative playstyles that defy the norm are often the ones that end up redefining the meta and elevate the level of play to new heights.
 
-## Fairness Analysis
+# Fairness Analysis
 
 In this final section, we will conduct a fairness analysis via hypothesis testing on our final model to see if our model performs similarly for individuals from different groups. In particular, we'll test if the model performs equally well for teams in different leagues. We will compare the performance of our model between LCK (Korea) and LCS (North America) matches using F1 score as our evaluation metric. Since our model was trained on data from all regions, we need to make sure that it doesn't underperform for certain leagues due to the vast differences in playstyles between different regions and leagues. Below, we set up the test:
 
