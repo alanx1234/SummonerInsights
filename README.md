@@ -84,7 +84,7 @@ The Creep Score per Minute (CSPM) histogram is symmetric, with a peak at around 
 
 ### **Bivariate Analysis**
 
-Now that we have examined some individual distributions, we can now transfer our attention to analyzing the relationships between variables. In the univariate analysis step, we made observations of how CSPM and kills are individually distributed, and we can now extend that in this step. By plotting CSPM against kills and comparing damage output in wins versus losses, we can get a general idea of which variables are correlated. The insights gained here will be helpful in conducting hypothesis tests and our modeling process down the line.
+Now that we have examined some individual distributions, we can now transfer our attention to analyzing the relationships between variables. In the univariate analysis step, we made observations of how CSPM and kills are individually distributed, and we can now extend that in this step. By plotting CSPM against kills and comparing damage output in wins versus losses, we can get a general idea of which variables are correlated. The insights gained here will be helpful in conducting hypothesis tests and for our modeling process down the line.
 
 <iframe
   src="assets/cspm_v_kills.html"
@@ -336,7 +336,7 @@ We see that `KDA`, a mixture between `kills`, `deaths`, and `assists`, turns out
 
 The next two most important features are `kills` and `firstbaron`. Seeing `kills` rank in second place also makes sense, as it directly contributes to `KDA`. Surprisingly, with how prevalently teams strategize to seize the first baron, it has relatively low importance in comparison to `KDA`. Despite this, it still carries a considerable amount of predictive power.
 
-The two least important features are `dragons` and `cspm`. It is intuitive for `dragons` to be less influential in comparison to `firstbaron`, as Baron Nashor offers a much stronger buff when secured. However, it is somewhat surprising that `cspm` contributes so little to the model's predictions, even though farming minions and jungle monsters are the main way players gain gold, aside from kills and assists. But as noted before, almost every player at the professional level is capable of consistently obtaining high CSPM. Rather, it is the tempo of the game that dictates how high a team's overall CSPM is. We saw glimpses of this in our univariate analysis step, where we noted that there is essentially no correlation between `cspm` and `kills`.
+The two least important features are `dragons` and `cspm`. It is intuitive for `dragons` to be less influential in comparison to `firstbaron`, as Baron Nashor offers a much stronger buff when secured. However, it is somewhat surprising that `cspm` contributes so little to the model's predictions, even though farming minions and jungle monsters are the main ways players gain gold, aside from kills and assists. But as noted before, almost every player at the professional level is capable of consistently obtaining high CSPM. Rather, it is the tempo of the game that dictates how high a team's overall CSPM is. We saw glimpses of this in our univariate analysis step, where we noted that there is essentially no correlation between `cspm` and `kills`.
 
 #### Takeaways
 
@@ -352,7 +352,7 @@ Although Baron Nashor seems less important than KDA or kills, it still contribut
 
 **Focus Less on Maintaining High CSPM**
 
-Because CSPM accounts has such a minor feature importance at the highest levels of play, it isn't one of the aspects that teams should try to maximize. While farming is definitely important, it might be more beneficial to sacrifice consistent farming for joining important team fights and securing objectives instead. Letting go of a good wave state to participate in a skirmish or contest an objective can greatly turn the tides of the game.
+Because CSPM accounts has such a minor feature importance at the highest levels of play, it isn't one of the aspects that teams should try to maximize. While farming is definitely important, it might be more beneficial to sacrifice consistent farming for joining important team fights and securing objectives instead. Temporarily leaving your lane to participate in a skirmish or to contest an objective can greatly turn the tides of the game.
 
 It is important to note that these guidelines are not meant to be definitive, but rather should be taken as suggestions to experiment with. In League of Legends, innovative playstyles that defy the norm are often the ones that end up redefining the meta and elevate the level of play to new heights.
 
