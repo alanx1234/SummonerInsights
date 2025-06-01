@@ -56,7 +56,7 @@ Here is a preview of the fully cleaned team‐level data:
 | ESPORTSTMNT01_2690227 | LCKC     |      14 |        42 |        5 |               67376 | 34.7769 |            269 |           874 | True         |         4 | True     |
 
 
-### Univariate Analysis
+### **Univariate Analysis**
 Before proceeding with any further analysis, let's first take a look at some of our variable of interests on their own. In doing so, we can get a better intuition of how some of our variables are distributed. We can examine the individual distributions for `kills` and `cspm`, which will help us understand their spread, skew, outliers, and whether or not any transformations may be needed during the modeling process or during hypothesis testing. 
 
 
