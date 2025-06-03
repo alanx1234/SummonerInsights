@@ -338,7 +338,7 @@ The table below shows each feature's relative importance in our finalized Random
 
 #### Feature Importance
 
-First, it's important to note that since `KDA` and `kills` are correlated because `KDA` is directly constructed from `kills`, this means their importance scores get shared when the forest is training. This doesn't necessarily hurt the performance of the model, but it could lower each feature's importance score. Regardless, we can still examine each feature’s importance to some extent.
+First, it's important to note that since `KDA` and `kills` are correlated because `KDA` is directly constructed from `kills`, this means their importance scores get shared when the forest is training. This doesn't necessarily hurt the performance of the model, but it could lower each feature's importance score. Regardless, we can still examine each feature’s relative importance to some extent.
 
 We see that `KDA`, a mixture between `kills`, `deaths`, and `assists`, turns out to be the most important feature for predicting the outcome of a match. A team having a high KDA greatly influences the model into predicting a victory. This is intuitive because maximizing kills and assists and minimizing deaths is the most effective way of building a resource and experience advantage, which can be a decider in major fights throughout the game. 
 
