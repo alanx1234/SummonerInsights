@@ -305,8 +305,8 @@ The results of this grid search show that the optimal combination of parameters 
 
 - **n_estimators** = 300
 - **max_depth** = 5
-- **min_samples_leaf** = 3
-- **min_samples_split** = 10
+- **min_samples_leaf** = 2
+- **min_samples_split** = 5
 - **criterion** =  `gini`
 
 Next, we will build a final pipeline using these hyperparameters, fit it on the entirety of the training data, and then evaluate and compare its performance to the baseline model.
